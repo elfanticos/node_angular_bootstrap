@@ -1,0 +1,26 @@
+<button [routerLink]="['/create_edit']">Crear</button>
+<table border="1">
+  <thead>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Apellido paterno</th>
+    <th>Apellido materno</th>
+    <th>Edad</th>
+    <th>Correo</th>
+    <th>Acciones</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let per of personas; let i = index;">
+      <td>{{per.id_persona}}</td>
+      <td>{{per.nom_persona}}</td>
+      <td>{{per.ape_paterno}}</td>
+      <td>{{per.ape_materno}}</td>
+      <td>{{per.edad}}</td>
+      <td>{{per.correo}}</td>
+      <td>
+        <button [routerLink]="['/create_edit',per.id_persona]">Editar</button>
+        <button (click)="eliminarPersona(per.id_persona, i)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

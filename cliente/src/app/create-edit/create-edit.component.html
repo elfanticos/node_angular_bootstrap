@@ -1,0 +1,25 @@
+<div>
+  <label for="nombre">Nombre</label>
+  <input type="text" name="nombre" [(ngModel)]="nombre">
+</div>
+<div>
+  <label for="ape_paterno">Apellido paterno</label>
+  <input type="text" name="ape_paterno" [(ngModel)]="ape_paterno">
+</div>
+<div>
+  <label for="ape_materno">Apellido materno</label>
+  <input type="text" name="ape_materno" [(ngModel)]="ape_materno">
+</div>
+<div>
+  <label for="edad">Edad</label>
+  <input type="text" name="edad" [(ngModel)]="edad" maxlength="3">
+</div>
+<div>
+  <label for="correo">Correo</label>
+  <input type="text" name="correo" [(ngModel)]="correo">
+</div>
+<div>
+  <button *ngIf="!id_persona" (click)="registrarPersona()">Crear</button>
+  <button *ngIf="id_persona" (click)="editarPersona()">Editar</button>
+  <button [routerLink]="['/']">Regresar</button>
+</div>
